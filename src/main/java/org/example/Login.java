@@ -13,6 +13,8 @@ public class Login {
     private JPanel panelLogin;
     private JLabel lblUserImage;
     private JLabel lblPasswordImage;
+    private String userName;
+    private String password;
 
     public Login() {
 
@@ -28,7 +30,12 @@ public class Login {
 
         lblPasswordImage.setIcon(new ImageIcon(scaledImg2));
 
+        userName = lblUsername.getText();
+        password = lblPassword.getText();
+
+        
     }
+
 
     public Image getScaledImg(ImageIcon icon) {
         if (icon == null) {
