@@ -22,10 +22,14 @@ public class TicketDialog extends JDialog {
     private Queue queue;
 
 
-    public TicketDialog() {
+    public TicketDialog(Queue queue) {
+        this.queue = queue;
         setContentPane(principalPaneTicket);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
+        setTitle("Ticket creation");
+        setSize(800, 600);
+        setLocationRelativeTo(null);
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -74,13 +78,6 @@ public class TicketDialog extends JDialog {
     private void onCancel() {
         // add your code here if necessary
         dispose();
-    }
-
-    public static void main(String[] args) {
-        TicketDialog dialog = new TicketDialog();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
     }
 
     public boolean hasEmptyFields() {

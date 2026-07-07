@@ -9,17 +9,18 @@ public class Main {
     public Main() {
         FileManager fileManager = new FileManager();
         fileManager.readFile();
-        TicketDialog ticketDialog = new TicketDialog();
+        Queue queue = new Queue();
+        TicketDialog ticketDialog = new TicketDialog(queue);
         JFrame frame = new JFrame("Sistema de tickets");
         JPanel mainPanel = new JPanel(new CardLayout());
 
         Login loginPanel = new Login(fileManager.simpleList, mainPanel);
-        Admin adminPanel = new Admin(mainPanel, ticketDialog.getQueue());
-        Client clientPanel = new Client();
+        Admin adminPanel = new Admin(mainPanel, queue);
+        Client clientPanel = new Client(mainPanel, queue);
 
         mainPanel.add(loginPanel.getPanelLogin(), "login");
         mainPanel.add(adminPanel.getPanelPrincipalAdmin(), "principalAdmin");
-        mainPanel.add(clientPanel.getPanelPrincipalClient, "client");
+        mainPanel.add(clientPanel.getPanelPrincipalClient(), "client");
 
 
         frame.setContentPane(mainPanel);
