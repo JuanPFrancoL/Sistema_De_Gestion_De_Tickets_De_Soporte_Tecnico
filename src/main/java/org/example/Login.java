@@ -44,11 +44,11 @@ public class Login {
             public void actionPerformed(ActionEvent e) {
                 userName = txtUsername.getText().trim();
                 password = new String(txtPassword.getPassword());
-                user = new User(userName, password);
-
-                if (!validateUserAndPassword(userName, password)) {
-                    JOptionPane.showMessageDialog(null, "Incorrect username or password");
-                } else if (isAdmin(user)) {
+                if (hasEmptyFields(userName, password)) {
+                    return;
+                }
+                user = findUser(userName, password);
+                if (isAdmin(user)) {
                     CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
                     cardLayout.show(mainPanel, "principalAdmin");
                 }
@@ -65,17 +65,10 @@ public class Login {
 
     }
 
-    public boolean validateUserAndPassword(String username, String password) {
+    public boolean hasEmptyFields(String username, String password) {
         if (username.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please enter username or password");
-        } else {
-            SimpleNode pointer = simpleList.head;
-            while (pointer != null) {
-                if (pointer.user.getName().equals(username) && pointer.user.getPassword().equals(password)) {
-                    return true;
-                }
-                pointer = pointer.next;
-            }
+            return true;
         }
         return false;
     }
@@ -85,6 +78,17 @@ public class Login {
             return true;
         }
         return false;
+    }
+
+    public User findUser(String userName, String password) {
+        SimpleNode pointer = simpleList.head;
+        while (pointer != null) {
+            if (pointer.user.getName().equals(userName) && pointer.user.getPassword().equals(password)) {
+                return pointer.user;
+            }
+            pointer = pointer.next;
+        }
+        return null;
     }
 
 

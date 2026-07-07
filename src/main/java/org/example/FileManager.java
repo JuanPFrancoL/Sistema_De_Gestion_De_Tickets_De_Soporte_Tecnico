@@ -13,7 +13,7 @@ public class FileManager {
             String line = bufferedReader.readLine();
             while (line != null) {
                 String[] partes = line.split(",");
-                simpleList.addNode(new User(partes[0], partes[1]));
+                simpleList.addNode(new User(partes[0], partes[1], Role.valueOf(partes[2])));
                 line = bufferedReader.readLine();
             }
         } catch (IOException e) {
