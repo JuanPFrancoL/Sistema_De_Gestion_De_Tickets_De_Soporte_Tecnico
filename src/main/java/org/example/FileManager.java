@@ -4,6 +4,7 @@ import java.io.*;
 
 public class FileManager {
     SimpleList simpleList = new SimpleList();
+    File file = new File("users.txt");
 
     public void readFile(File file) {
         try {
