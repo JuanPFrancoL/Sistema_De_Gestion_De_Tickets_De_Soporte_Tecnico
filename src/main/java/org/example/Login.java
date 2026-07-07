@@ -33,7 +33,7 @@ public class Login {
         userName = lblUsername.getText();
         password = lblPassword.getText();
 
-        
+
     }
 
 
