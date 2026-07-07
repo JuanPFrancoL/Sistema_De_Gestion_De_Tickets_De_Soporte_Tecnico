@@ -5,8 +5,8 @@ public class SimpleList {
     int size;
 
 
-    public void addNode(String line) {
-        SimpleNode newNode = new SimpleNode(line);
+    public void addNode(User user) {
+        SimpleNode newNode = new SimpleNode(user);
         SimpleNode pointer = head;
         if (head == null) {
             head = newNode;

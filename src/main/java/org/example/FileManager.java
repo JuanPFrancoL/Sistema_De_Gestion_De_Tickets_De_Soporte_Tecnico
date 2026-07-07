@@ -3,7 +3,6 @@ package org.example;
 import java.io.*;
 
 public class FileManager {
-    File file;
     SimpleList simpleList = new SimpleList();
 
     public void readFile(File file) {
@@ -12,7 +11,8 @@ public class FileManager {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line = bufferedReader.readLine();
             while (line != null) {
-                simpleList.addNode(line);
+                String[] partes = line.split(",");
+                simpleList.addNode(new User(partes[0], partes[1]));
                 line = bufferedReader.readLine();
             }
         } catch (IOException e) {
@@ -25,11 +25,11 @@ public class FileManager {
             FileWriter fileWriter = new FileWriter(file, true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             SimpleNode pointer = simpleList.head;
-            while (pointer.next != null) {
+            while (pointer != null) {
+                bufferedWriter.write(pointer.user.toString());
+                bufferedWriter.newLine();
                 pointer = pointer.next;
             }
-            pointer.next = bufferedWriter.write(pointer.line);
-            bufferedWriter.newLine();
         } catch (IOException e) {
             e.printStackTrace();
         }

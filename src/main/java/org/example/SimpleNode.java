@@ -1,11 +1,11 @@
 package org.example;
 
 public class SimpleNode {
-    String line;
+    User user;
     SimpleNode next;
 
-    public SimpleNode(String line) {
-        this.line = line;
+    public SimpleNode(User user) {
+        this.user = user;
         this.next = null;
     }
 }
