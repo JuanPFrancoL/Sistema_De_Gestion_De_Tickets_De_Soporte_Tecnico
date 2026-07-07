@@ -1,9 +1,6 @@
 package org.example;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class FileManager {
     File file;
@@ -16,10 +13,26 @@ public class FileManager {
             String line = bufferedReader.readLine();
             while (line != null) {
                 simpleList.addNode(line);
+                line = bufferedReader.readLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    
+
+    public void writeFile(File file) {
+        try {
+            FileWriter fileWriter = new FileWriter(file, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            SimpleNode pointer = simpleList.head;
+            while (pointer.next != null) {
+                pointer = pointer.next;
+            }
+            pointer.next = bufferedWriter.write(pointer.line);
+            bufferedWriter.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
