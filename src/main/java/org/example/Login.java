@@ -15,8 +15,12 @@ public class Login {
     private JLabel lblPasswordImage;
     private String userName;
     private String password;
+    User user;
+    SimpleList simpleList;
 
-    public Login() {
+    public Login(SimpleList simpleList) {
+
+        this.simpleList = simpleList;
 
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/user.png"));
 
@@ -30,9 +34,9 @@ public class Login {
 
         lblPasswordImage.setIcon(new ImageIcon(scaledImg2));
 
-        userName = lblUsername.getText();
-        password = lblPassword.getText();
-
+        userName = txtUsername.getText();
+        password = new String(txtPassword.getPassword());
+        user = new User(userName, password);
 
     }
 
@@ -43,6 +47,21 @@ public class Login {
         }
         return icon.getImage().getScaledInstance(32, 32, Image.SCALE_SMOOTH);
 
+    }
+
+    public boolean validateUser(String username, String password) {
+        if (username.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please enter username or password");
+            return false;
+        } else {
+            SimpleNode pointer = simpleList.head;
+            while (pointer != null) {
+                if (pointer.user.getName().equals(username) && pointer.user.getPassword().equals(password)) {
+                    return true;
+                }
+                pointer = pointer.next;
+            }
+        }
     }
 
 
