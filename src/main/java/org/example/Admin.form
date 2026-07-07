@@ -12,7 +12,7 @@
         <properties>
           <font name="Segoe UI" size="22" style="1"/>
           <foreground color="-16497010"/>
-          <text value="Panel Administradores"/>
+          <text value="Administrator Panel"/>
           <verticalAlignment value="0"/>
           <visible value="true"/>
         </properties>
@@ -31,7 +31,7 @@
             </constraints>
             <properties>
               <font name="Segoe UI Semilight"/>
-              <text value="Cambiar prioridad"/>
+              <text value="Change priority"/>
             </properties>
           </component>
           <component id="df121" class="javax.swing.JButton" binding="btnSearchTicket">
@@ -40,7 +40,7 @@
             </constraints>
             <properties>
               <font name="Segoe UI Semilight"/>
-              <text value="Buscar ticket en atencion"/>
+              <text value="Search ticket in atention"/>
             </properties>
           </component>
           <component id="23d12" class="javax.swing.JButton" binding="btnCloseTicket">
@@ -49,7 +49,7 @@
             </constraints>
             <properties>
               <font name="Segoe UI Semilight"/>
-              <text value="Cerrar ticket"/>
+              <text value="Close ticket"/>
             </properties>
           </component>
           <component id="c7ad5" class="javax.swing.JButton" binding="btnSeachPendingTickets">
@@ -58,7 +58,7 @@
             </constraints>
             <properties>
               <font name="Segoe UI Semilight"/>
-              <text value="Buscar tickets pendientes"/>
+              <text value="Search pending tickets"/>
             </properties>
           </component>
           <component id="e73d7" class="javax.swing.JButton" binding="btnShowTicketsInAtention">
@@ -67,7 +67,7 @@
             </constraints>
             <properties>
               <font name="Segoe UI Semilight"/>
-              <text value="Mostrar tickets en atencion"/>
+              <text value="Show tickets in atention"/>
             </properties>
           </component>
           <component id="8a3c" class="javax.swing.JButton" binding="btnChangeStatus">
@@ -76,7 +76,7 @@
             </constraints>
             <properties>
               <font name="Segoe UI Semilight"/>
-              <text value="Cambiar estado"/>
+              <text value="Change Status"/>
             </properties>
           </component>
           <component id="e7c6b" class="javax.swing.JButton" binding="btnUndoLastStateChange">
@@ -85,7 +85,7 @@
             </constraints>
             <properties>
               <font name="Segoe UI Semilight"/>
-              <text value="Deshacer ultimo cambio de estado"/>
+              <text value="Undo last state change"/>
             </properties>
           </component>
           <component id="3abeb" class="javax.swing.JButton" binding="btnShowTicketStatusHistory">
@@ -94,7 +94,7 @@
             </constraints>
             <properties>
               <font name="Segoe UI Semilight"/>
-              <text value="Mostrar historial de estados de un ticket"/>
+              <text value="Show ticket status history"/>
             </properties>
           </component>
           <component id="fbf68" class="javax.swing.JButton" binding="btnClose">
@@ -105,7 +105,7 @@
               <background color="-6880768"/>
               <font name="Segoe UI Semilight"/>
               <foreground color="-1"/>
-              <text value="Salir"/>
+              <text value="Close"/>
             </properties>
           </component>
           <component id="4e210" class="javax.swing.JLabel" binding="lblPanelStatus">
