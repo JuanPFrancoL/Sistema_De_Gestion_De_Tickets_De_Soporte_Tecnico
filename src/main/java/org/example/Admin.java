@@ -1,6 +1,8 @@
 package org.example;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Admin {
     private JPanel panelPrincipalAdmin;
@@ -15,7 +17,36 @@ public class Admin {
     private JButton btnShowTicketStatusHistory;
     private JButton btnClose;
     private JLabel lblPanelStatus;
+    private Queue queue;
+    private Stack stack;
 
+
+    public Admin(JPanel mainPanel, Queue queue, Stack stack) {
+
+        this.queue = queue;
+        this.stack = stack;
+
+
+        btnClose.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mainPanel.remove(panelPrincipalAdmin);
+            }
+        });
+        btnShowTicketsInAtention.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] options = {"Desde el primero hasta el ultimo", "Desde el ultimo hasta el primero"};
+                int option = JOptionPane.showOptionDialog(null, "Seleccione una opcion", "Consultar tickets", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+                if (option == 0) {
+                } else if (option == 1) {
+
+                } else if (option ==  JOptionPane.CLOSED_OPTION; ) {
+                    return;
+                }
+            }
+        });
+    }
 
     public JPanel getPanelPrincipalAdmin() {
         return panelPrincipalAdmin;

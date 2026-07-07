@@ -13,7 +13,7 @@ public class Main {
         JPanel mainPanel = new JPanel(new CardLayout());
 
         Login loginPanel = new Login(fileManager.simpleList, mainPanel);
-        Admin adminPanel = new Admin();
+        Admin adminPanel = new Admin(mainPanel);
 
         mainPanel.add(loginPanel.getPanelLogin(), "login");
         mainPanel.add(adminPanel.getPanelPrincipalAdmin(), "principalAdmin");
