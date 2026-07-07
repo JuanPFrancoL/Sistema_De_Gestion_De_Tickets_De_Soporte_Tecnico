@@ -104,6 +104,7 @@
             <properties>
               <background color="-6880768"/>
               <font name="Segoe UI Semilight"/>
+              <foreground color="-1"/>
               <text value="Salir"/>
             </properties>
           </component>
