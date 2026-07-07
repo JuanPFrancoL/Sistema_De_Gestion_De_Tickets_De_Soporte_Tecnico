@@ -36,7 +36,7 @@ public class Queue {
         String text = "";
         Node pointer = head;
         while (pointer != null) {
-            text += pointer.toString() + "\n";
+            text += pointer.ticket.toString() + "\n";
             pointer = pointer.next;
         }
         return text;
@@ -46,7 +46,7 @@ public class Queue {
         String text = "";
         Node pointer = tail;
         while (pointer != null) {
-            text += pointer.toString() + "\n";
+            text += pointer.ticket.toString() + "\n";
             pointer = pointer.previous;
         }
         return text;
