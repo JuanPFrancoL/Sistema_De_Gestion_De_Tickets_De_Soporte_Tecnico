@@ -31,6 +31,7 @@
             <properties>
               <background color="-16497010"/>
               <font name="Segoe UI Light"/>
+              <foreground color="-1"/>
               <text value="Create ticket"/>
             </properties>
           </component>
@@ -41,6 +42,7 @@
             <properties>
               <background color="-6880768"/>
               <font name="Segoe UI Light"/>
+              <foreground color="-1"/>
               <text value="Close"/>
             </properties>
           </component>
