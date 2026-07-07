@@ -1,0 +1,2 @@
+karolay,123,ADMIN
+lola,321,CLIENT

@@ -1,17 +1,36 @@
 package org.example;
 
 import javax.swing.*;
+import java.awt.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Login");
+    public Main() {
+        FileManager fileManager = new FileManager();
+        fileManager.readFile();
+        JFrame frame = new JFrame("Sistema de tickets");
+        JPanel mainPanel = new JPanel(new CardLayout());
+
+        Login loginPanel = new Login(fileManager.simpleList);
+        Admin adminPanel = new Admin();
+
+        mainPanel.add(loginPanel.getPanelLogin(), "login");
+        mainPanel.add(adminPanel.getPanelPrincipalAdmin(), "principalAdmin");
+
+        frame.setContentPane(mainPanel);
+
+        CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
+        cardLayout.show(mainPanel, "login");
+
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setLocationRelativeTo(null);
-//        frame.add(new Login().getPanelLogin());
-        frame.add(new Admin().getPanelPrincipalAdmin());
         frame.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new Main();
     }
 }
