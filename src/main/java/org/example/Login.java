@@ -1,5 +1,6 @@
 package org.example;
 
+import javax.management.relation.Role;
 import javax.swing.*;
 import java.awt.*;
 
@@ -15,6 +16,7 @@ public class Login {
     private JLabel lblPasswordImage;
     private String userName;
     private String password;
+    Role rol;
 
     public Login() {
 
@@ -32,7 +34,7 @@ public class Login {
 
         userName = txtUsername.getText();
         password = new String(txtPassword.getPassword());
-        user = new User(userName, password);
+        user = new User(userName, password,);
 
 
     }
@@ -46,7 +48,7 @@ public class Login {
 
     }
 
-    public boolean validateUser(String username, String password) {
+    public boolean validateUserAndPassword(String username, String password) {
         if (username.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please enter username or password");
             return false;
@@ -59,6 +61,13 @@ public class Login {
                 pointer = pointer.next;
             }
         }
+    }
+
+    public boolean isAdmin(User user) {
+        if (user.getRol() == org.example.Role.ADMIN) {
+            return true;
+        }
+        return false;
     }
 
 
