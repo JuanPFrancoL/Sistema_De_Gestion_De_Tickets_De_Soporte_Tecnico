@@ -44,7 +44,6 @@ public class Login {
             public void actionPerformed(ActionEvent e) {
                 userName = txtUsername.getText().trim();
                 password = new String(txtPassword.getPassword());
-                cleanFields();
                 if (hasEmptyFields(userName, password)) {
                     return;
                 }
@@ -52,11 +51,11 @@ public class Login {
                 if (user == null) {
                     return;
                 }
+                cleanFields();
+                CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
                 if (isAdmin(user)) {
-                    CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
                     cardLayout.show(mainPanel, "principalAdmin");
                 } else {
-                    CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
                     cardLayout.show(mainPanel, "client");
                 }
             }
