@@ -9,11 +9,12 @@ public class Main {
     public Main() {
         FileManager fileManager = new FileManager();
         fileManager.readFile();
+        TicketDialog ticketDialog = new TicketDialog();
         JFrame frame = new JFrame("Sistema de tickets");
         JPanel mainPanel = new JPanel(new CardLayout());
 
         Login loginPanel = new Login(fileManager.simpleList, mainPanel);
-        Admin adminPanel = new Admin(mainPanel);
+        Admin adminPanel = new Admin(mainPanel, ticketDialog.getQueue());
 
         mainPanel.add(loginPanel.getPanelLogin(), "login");
         mainPanel.add(adminPanel.getPanelPrincipalAdmin(), "principalAdmin");

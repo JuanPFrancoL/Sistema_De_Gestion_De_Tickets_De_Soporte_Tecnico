@@ -21,10 +21,9 @@ public class Admin {
     private Stack stack;
 
 
-    public Admin(JPanel mainPanel, Queue queue, Stack stack) {
+    public Admin(JPanel mainPanel, Queue queue) {
 
         this.queue = queue;
-        this.stack = stack;
 
 
         btnClose.addActionListener(new ActionListener() {
