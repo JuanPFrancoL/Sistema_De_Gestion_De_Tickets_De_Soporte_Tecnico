@@ -10,7 +10,6 @@ public class Main {
         FileManager fileManager = new FileManager();
         fileManager.readFile();
         Queue queue = new Queue();
-        TicketDialog ticketDialog = new TicketDialog(queue);
         JFrame frame = new JFrame("Sistema de tickets");
         JPanel mainPanel = new JPanel(new CardLayout());
 

@@ -16,5 +16,9 @@ public class Ticket {
         this.actualState = ActualState.NEW;
     }
 
+    public String toString() {
+        return "Number: " + number + "\nName: " + name + "\nDescription: " + description + "\nPriority: " + priority;
+    }
+
 
 }
