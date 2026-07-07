@@ -32,12 +32,22 @@ public class Queue {
         return nodeDequeue;
     }
 
-    public String printQueue() {
+    public String printQueueFirstToLast() {
         String text = "";
         Node pointer = head;
         while (pointer != null) {
             text += pointer.toString() + "\n";
             pointer = pointer.next;
+        }
+        return text;
+    }
+
+    public String printQueueLastToFirst() {
+        String text = "";
+        Node pointer = tail;
+        while (pointer != null) {
+            text += pointer.toString() + "\n";
+            pointer = pointer.previous;
         }
         return text;
     }
