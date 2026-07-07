@@ -31,4 +31,14 @@ public class Queue {
         size--;
         return nodeDequeue;
     }
+
+    public String printQueue() {
+        String text = "";
+        Node pointer = head;
+        while (pointer != null) {
+            text += pointer.toString() + "\n";
+            pointer = pointer.next;
+        }
+        return text;
+    }
 }
