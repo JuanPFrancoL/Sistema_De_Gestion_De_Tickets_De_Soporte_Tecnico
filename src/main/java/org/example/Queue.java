@@ -17,6 +17,7 @@ public class Queue {
             head = node;
         } else {
             tail.next = node;
+            node.previous = tail;
             tail = node;
         }
         size++;
