@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.example.Admin">
+  <grid id="27dc6" binding="panelPrincipalAdmin" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="560" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="cb33" class="javax.swing.JLabel" binding="lblTitleAdmin">
+        <constraints border-constraint="North"/>
+        <properties>
+          <font name="Segoe UI" size="22" style="1"/>
+          <foreground color="-16497010"/>
+          <text value="Panel Administradores"/>
+          <verticalAlignment value="0"/>
+          <visible value="true"/>
+        </properties>
+      </component>
+      <grid id="40be0" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="4" left="3" bottom="10" right="10"/>
+        <constraints border-constraint="Center"/>
+        <properties>
+          <background color="-5197648"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="7f28b" class="javax.swing.JButton" binding="btnChangePriority">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Segoe UI Semilight"/>
+              <text value="Cambiar prioridad"/>
+            </properties>
+          </component>
+          <component id="df121" class="javax.swing.JButton" binding="btnSearchTicket">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Segoe UI Semilight"/>
+              <text value="Buscar ticket en atencion"/>
+            </properties>
+          </component>
+          <component id="23d12" class="javax.swing.JButton" binding="btnCloseTicket">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Segoe UI Semilight"/>
+              <text value="Cerrar ticket"/>
+            </properties>
+          </component>
+          <component id="c7ad5" class="javax.swing.JButton" binding="btnSeachPendingTickets">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Segoe UI Semilight"/>
+              <text value="Buscar tickets pendientes"/>
+            </properties>
+          </component>
+          <component id="e73d7" class="javax.swing.JButton" binding="btnShowTicketsInAtention">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Segoe UI Semilight"/>
+              <text value="Mostrar tickets en atencion"/>
+            </properties>
+          </component>
+          <component id="8a3c" class="javax.swing.JButton" binding="btnChangeStatus">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Segoe UI Semilight"/>
+              <text value="Cambiar estado"/>
+            </properties>
+          </component>
+          <component id="e7c6b" class="javax.swing.JButton" binding="btnUndoLastStateChange">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Segoe UI Semilight"/>
+              <text value="Deshacer ultimo cambio de estado"/>
+            </properties>
+          </component>
+          <component id="3abeb" class="javax.swing.JButton" binding="btnShowTicketStatusHistory">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Segoe UI Semilight"/>
+              <text value="Mostrar historial de estados de un ticket"/>
+            </properties>
+          </component>
+          <component id="fbf68" class="javax.swing.JButton" binding="btnClose">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-6880768"/>
+              <font name="Segoe UI Semilight"/>
+              <text value="Salir"/>
+            </properties>
+          </component>
+          <component id="4e210" class="javax.swing.JLabel" binding="lblPanelStatus">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Label"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
