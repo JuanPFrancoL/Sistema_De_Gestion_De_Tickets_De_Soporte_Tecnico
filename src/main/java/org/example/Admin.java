@@ -39,6 +39,7 @@ public class Admin {
                 String[] options = {"Desde el primero hasta el ultimo", "Desde el ultimo hasta el primero"};
                 int option = JOptionPane.showOptionDialog(null, "Seleccione una opcion", "Consultar tickets", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
                 if (option == 0) {
+                    JOptionPane.showMessageDialog(null,queue.printQueue());
                 } else if (option == 1) {
 
                 } else if (option ==  JOptionPane.CLOSED_OPTION; ) {
