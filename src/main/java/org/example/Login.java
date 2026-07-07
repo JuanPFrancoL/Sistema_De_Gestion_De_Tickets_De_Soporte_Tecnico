@@ -44,10 +44,14 @@ public class Login {
             public void actionPerformed(ActionEvent e) {
                 userName = txtUsername.getText().trim();
                 password = new String(txtPassword.getPassword());
+                cleanFields();
                 if (hasEmptyFields(userName, password)) {
                     return;
                 }
                 user = findUser(userName, password);
+                if (user == null) {
+                    return;
+                }
                 if (isAdmin(user)) {
                     CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
                     cardLayout.show(mainPanel, "principalAdmin");
@@ -97,6 +101,11 @@ public class Login {
         }
         JOptionPane.showMessageDialog(null, "User Not Found");
         return null;
+    }
+
+    public void cleanFields() {
+        txtUsername.setText("");
+        txtPassword.setText("");
     }
 
 
