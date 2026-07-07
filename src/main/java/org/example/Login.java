@@ -21,9 +21,10 @@ public class Login {
     User user;
     SimpleList simpleList;
 
-    public Login(SimpleList simpleList) {
+    public Login(SimpleList simpleList, JPanel mainPanel) {
 
         this.simpleList = simpleList;
+        this.panelLogin = mainPanel;
 
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/user.png"));
 
@@ -41,14 +42,16 @@ public class Login {
         btnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                userName = txtUsername.getText();
+                userName = txtUsername.getText().trim();
                 password = new String(txtPassword.getPassword());
                 user = new User(userName, password);
 
                 if (!validateUserAndPassword(userName, password)) {
                     JOptionPane.showMessageDialog(null, "Incorrect username or password");
+                } else if (isAdmin(user)) {
+                    CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
+                    cardLayout.show(mainPanel, "principalAdmin");
                 }
-
             }
         });
     }

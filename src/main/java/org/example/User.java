@@ -8,7 +8,7 @@ public class User {
     public User(String name, String password) {
         this.name = name;
         this.password = password;
-        if (name.equals("Karolay") || name.equals("Physicaly")) {
+        if (name.equalsIgnoreCase("karolay") || name.equalsIgnoreCase("Physicaly")) {
             this.rol = Role.ADMIN;
         } else {
             this.rol = Role.CLIENT;

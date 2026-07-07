@@ -12,7 +12,7 @@ public class Main {
         JFrame frame = new JFrame("Sistema de tickets");
         JPanel mainPanel = new JPanel(new CardLayout());
 
-        Login loginPanel = new Login(fileManager.simpleList);
+        Login loginPanel = new Login(fileManager.simpleList, mainPanel);
         Admin adminPanel = new Admin();
 
         mainPanel.add(loginPanel.getPanelLogin(), "login");
