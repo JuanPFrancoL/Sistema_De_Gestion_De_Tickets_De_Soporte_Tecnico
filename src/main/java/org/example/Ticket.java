@@ -17,7 +17,7 @@ public class Ticket {
     }
 
     public String toString() {
-        return "Number: " + number + "\nName: " + name + "\nDescription: " + description + "\nPriority: " + priority;
+        return "Number: " + number + "\nName: " + name + "\nDescription: " + description + "\nPriority: " + priority + "\n-----------------------------";
     }
 
 
