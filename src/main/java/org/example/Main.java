@@ -15,9 +15,12 @@ public class Main {
 
         Login loginPanel = new Login(fileManager.simpleList, mainPanel);
         Admin adminPanel = new Admin(mainPanel, ticketDialog.getQueue());
+        Client clientPanel = new Client();
 
         mainPanel.add(loginPanel.getPanelLogin(), "login");
         mainPanel.add(adminPanel.getPanelPrincipalAdmin(), "principalAdmin");
+        mainPanel.add(clientPanel.getPanelPrincipalClient, "client");
+
 
         frame.setContentPane(mainPanel);
 

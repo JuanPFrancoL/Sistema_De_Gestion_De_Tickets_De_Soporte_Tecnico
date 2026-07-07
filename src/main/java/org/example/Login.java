@@ -51,6 +51,9 @@ public class Login {
                 if (isAdmin(user)) {
                     CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
                     cardLayout.show(mainPanel, "principalAdmin");
+                } else {
+                    CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
+                    cardLayout.show(mainPanel, "client");
                 }
             }
         });
