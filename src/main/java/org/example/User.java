@@ -5,14 +5,10 @@ public class User {
     private String password;
     private Role rol;
 
-    public User(String name, String password) {
+    public User(String name, String password, Role rol) {
         this.name = name;
         this.password = password;
-        if (name.equalsIgnoreCase("karolay") || name.equalsIgnoreCase("Physicaly")) {
-            this.rol = Role.ADMIN;
-        } else {
-            this.rol = Role.CLIENT;
-        }
+        this.rol = rol;
     }
 
     public String getName() {
