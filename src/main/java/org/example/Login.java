@@ -77,8 +77,12 @@ public class Login {
     }
 
     public boolean isAdmin(User user) {
-        if (user.getRol() == Role.ADMIN) {
-            return true;
+        try {
+            if (user.getRol() == Role.ADMIN) {
+                return true;
+            }
+        } catch (NullPointerException e) {
+            return false;
         }
         return false;
     }
@@ -91,6 +95,7 @@ public class Login {
             }
             pointer = pointer.next;
         }
+        JOptionPane.showMessageDialog(null, "User Not Found");
         return null;
     }
 
