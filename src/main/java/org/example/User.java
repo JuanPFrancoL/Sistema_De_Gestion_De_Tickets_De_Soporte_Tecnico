@@ -5,11 +5,13 @@ public class User {
     private String password;
     private Role rol;
 
-    public User(String name, String password, Role rol) {
+    public User(String name, String password) {
         this.name = name;
         this.password = password;
-        if (name.equals("adminKarolay")) {
+        if (name.equals("Karolay") || name.equals("Physicaly")) {
             this.rol = Role.ADMIN;
+        } else {
+            this.rol = Role.CLIENT;
         }
     }
 

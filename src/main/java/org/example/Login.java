@@ -1,8 +1,9 @@
 package org.example;
 
-import javax.management.relation.Role;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Login {
     private JLabel lblLogin;
@@ -17,8 +18,12 @@ public class Login {
     private String userName;
     private String password;
     Role rol;
+    User user;
+    SimpleList simpleList;
 
-    public Login() {
+    public Login(SimpleList simpleList) {
+
+        this.simpleList = simpleList;
 
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/user.png"));
 
@@ -32,11 +37,20 @@ public class Login {
 
         lblPasswordImage.setIcon(new ImageIcon(scaledImg2));
 
-        userName = txtUsername.getText();
-        password = new String(txtPassword.getPassword());
-        user = new User(userName, password,);
 
+        btnLogin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                userName = txtUsername.getText();
+                password = new String(txtPassword.getPassword());
+                user = new User(userName, password);
 
+                if (!validateUserAndPassword(userName, password)) {
+                    JOptionPane.showMessageDialog(null, "Incorrect username or password");
+                }
+
+            }
+        });
     }
 
 
@@ -51,7 +65,6 @@ public class Login {
     public boolean validateUserAndPassword(String username, String password) {
         if (username.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please enter username or password");
-            return false;
         } else {
             SimpleNode pointer = simpleList.head;
             while (pointer != null) {
@@ -61,10 +74,11 @@ public class Login {
                 pointer = pointer.next;
             }
         }
+        return false;
     }
 
     public boolean isAdmin(User user) {
-        if (user.getRol() == org.example.Role.ADMIN) {
+        if (user.getRol() == Role.ADMIN) {
             return true;
         }
         return false;
