@@ -55,12 +55,16 @@ public class DoublyLinkedList {
         }
     }
 
-    public void changePriority(Ticket ticket, Priority priority) {
+    public void changePriority(String number, Priority priority) {
+        Ticket ticket = find(number);
         ticket.priority = priority;
     }
 
-    public void changeState(Ticket ticket, ActualState state) {
+    public void changeState(String number, ActualState state) {
+        Ticket ticket = find(number);
+        ticket.description
         ticket.actualState = state;
+
     }
 
     public Ticket close(String number) {

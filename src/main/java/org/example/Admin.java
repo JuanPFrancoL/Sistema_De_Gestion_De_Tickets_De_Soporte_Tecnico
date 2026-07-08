@@ -19,11 +19,13 @@ public class Admin {
     private JLabel lblPanelStatus;
     private Queue queue;
     private Stack stack;
+    private DoublyLinkedList doublyLinkedList;
 
 
-    public Admin(JPanel mainPanel, Queue queue) {
+    public Admin(JPanel mainPanel, Queue queue, DoublyLinkedList doublyLinkedList) {
 
         this.queue = queue;
+        this.doublyLinkedList = doublyLinkedList;
 
 
         btnClose.addActionListener(new ActionListener() {
@@ -45,6 +47,20 @@ public class Admin {
                 } else if (option == 1) {
                     JOptionPane.showMessageDialog(null, queue.printQueueLastToFirst());
                 }
+            }
+        });
+
+        btnChangePriority.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Priority[] priorities;
+            }
+        });
+
+        btnChangeStatus.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
             }
         });
     }
