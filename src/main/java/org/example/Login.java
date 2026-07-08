@@ -48,11 +48,14 @@ public class Login {
                     return;
                 }
                 user = findUser(userName, password);
+                if (user == null) {
+                    return;
+                }
+                cleanFields();
+                CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
                 if (isAdmin(user)) {
-                    CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
                     cardLayout.show(mainPanel, "principalAdmin");
                 } else {
-                    CardLayout cardLayout = (CardLayout) mainPanel.getLayout();
                     cardLayout.show(mainPanel, "client");
                 }
             }
@@ -77,8 +80,12 @@ public class Login {
     }
 
     public boolean isAdmin(User user) {
-        if (user.getRol() == Role.ADMIN) {
-            return true;
+        try {
+            if (user.getRol() == Role.ADMIN) {
+                return true;
+            }
+        } catch (NullPointerException e) {
+            return false;
         }
         return false;
     }
@@ -91,7 +98,13 @@ public class Login {
             }
             pointer = pointer.next;
         }
+        JOptionPane.showMessageDialog(null, "User Not Found");
         return null;
+    }
+
+    public void cleanFields() {
+        txtUsername.setText("");
+        txtPassword.setText("");
     }
 
 
