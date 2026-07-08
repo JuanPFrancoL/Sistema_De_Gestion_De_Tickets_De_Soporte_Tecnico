@@ -1,7 +1,11 @@
 package org.example;
 
 import javax.swing.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class TicketDialog extends JDialog {
     private JPanel principalPaneTicket;
@@ -61,6 +65,7 @@ public class TicketDialog extends JDialog {
 
     private void onOK() {
         if (hasEmptyFields()) {
+            JOptionPane.showMessageDialog(this, "Complete todos los campos");
             return;
         }
 
@@ -71,6 +76,7 @@ public class TicketDialog extends JDialog {
 
         Ticket ticket = new Ticket(number, clientName, description, Priority.valueOf(priority));
         queue.enqueue(new Node(ticket));
+        JOptionPane.showMessageDialog(this, "Ticket registrado");
 
         dispose();
     }

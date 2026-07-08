@@ -6,7 +6,7 @@ public class Ticket {
     String description;
     Priority priority;
     ActualState actualState;
-
+    Stack history;
 
     public Ticket(String number, String name, String description, Priority priority) {
         this.number = number;
@@ -14,6 +14,8 @@ public class Ticket {
         this.description = description;
         this.priority = priority;
         this.actualState = ActualState.NEW;
+        history = new Stack();
+        history.push(String.valueOf(ActualState.NEW));
     }
 
     public String toString() {
