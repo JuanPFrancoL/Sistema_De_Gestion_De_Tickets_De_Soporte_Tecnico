@@ -61,7 +61,7 @@ public class Admin {
                 }
                 Ticket ticket = node.ticket;
                 ticket.actualState = ActualState.IN_PROCESS;
-
+                ticket.history.push(String.valueOf(ActualState.IN_PROCESS));
             }
         });
 
