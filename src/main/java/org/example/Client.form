@@ -32,7 +32,7 @@
               <background color="-16497010"/>
               <font name="Segoe UI Light"/>
               <foreground color="-1"/>
-              <text value="Create ticket"/>
+              <text value="Crear ticket"/>
             </properties>
           </component>
           <component id="84d3b" class="javax.swing.JButton" binding="btnClose">
@@ -43,7 +43,7 @@
               <background color="-6880768"/>
               <font name="Segoe UI Light"/>
               <foreground color="-1"/>
-              <text value="Close"/>
+              <text value="Cerrar"/>
             </properties>
           </component>
         </children>

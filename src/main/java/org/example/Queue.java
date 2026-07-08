@@ -34,6 +34,9 @@ public class Queue {
     }
 
     public String printQueueFirstToLast() {
+        if (size == 0) {
+            return "No hay tickets en la fila";
+        }
         String text = "";
         Node pointer = head;
         while (pointer != null) {
@@ -44,6 +47,9 @@ public class Queue {
     }
 
     public String printQueueLastToFirst() {
+        if (size == 0) {
+            return "No hay tickets en la fila";
+        }
         String text = "";
         Node pointer = tail;
         while (pointer != null) {

@@ -5,7 +5,7 @@ public class StackNode {
     StackNode next;
 
     public StackNode(String state) {
-        this.state = String.valueOf(ActualState.NEW);
+        this.state = state;
         this.next = null;
     }
 }

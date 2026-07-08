@@ -2,6 +2,7 @@ package org.example;
 
 public class Stack {
     StackNode top;
+    int size;
 
     public Stack() {
         this.top = null;
@@ -11,6 +12,7 @@ public class Stack {
         StackNode newNode = new StackNode(estado);
         newNode.next = top;
         top = newNode;
+        size++;
     }
 
     public String pop() {
@@ -19,6 +21,7 @@ public class Stack {
         }
         String state = top.state;
         top = top.next;
+        size--;
         return state;
     }
 
@@ -34,16 +37,22 @@ public class Stack {
     }
 
     public String printStack() {
-        String text = "";
         if (top == null) {
             return "No hay estados para mostrar";
         }
+        
+        String text = "";
         StackNode pointer = top;
+
         while (pointer != null) {
             text += pointer.state + "\n";
             pointer = pointer.next;
         }
         return text;
+    }
+
+    public int getSize() {
+        return size;
     }
 
 }

@@ -22,5 +22,13 @@ public class Ticket {
         return "Number: " + number + "\nName: " + name + "\nDescription: " + description + "\nPriority: " + priority + "\n-----------------------------";
     }
 
+    public void changeState(ActualState newState) {
+        if (this.actualState == newState) {
+            return;
+        }
+        this.actualState = newState;
+        this.history.push(String.valueOf(newState));
+    }
+
 
 }
