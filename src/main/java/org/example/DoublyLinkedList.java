@@ -62,9 +62,7 @@ public class DoublyLinkedList {
 
     public void changeState(String number, ActualState state) {
         Ticket ticket = find(number);
-        ticket.description
         ticket.actualState = state;
-
     }
 
     public Ticket close(String number) {
