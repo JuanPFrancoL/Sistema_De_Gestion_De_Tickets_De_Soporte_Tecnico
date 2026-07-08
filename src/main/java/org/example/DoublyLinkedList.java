@@ -39,30 +39,48 @@ public class DoublyLinkedList {
         return null;
     }
 
-    public void displayForward() {
+    public String displayForward() {
+        if (head == null) {
+            return "No hay tickets en atencion";
+        }
+        String text = "";
         Node pointer = head;
         while (pointer != null) {
-            System.out.println(pointer.ticket);
+            text += pointer.ticket.toString() + "\n";
             pointer = pointer.next;
         }
+        return text;
     }
 
-    public void displayBackward() {
+    public String displayBackward() {
+        if (last == null) {
+            return "No hay tickets en atencion";
+        }
+        String text = "";
         Node pointer = last;
         while (pointer != null) {
-            System.out.println(pointer.ticket);
+            text += pointer.ticket.toString() + "\n";
             pointer = pointer.previous;
         }
+        return text;
     }
 
-    public void changePriority(String number, Priority priority) {
+    public boolean changePriority(String number, Priority priority) {
         Ticket ticket = find(number);
+        if (ticket == null) {
+            return false;
+        }
         ticket.priority = priority;
+        return true;
     }
 
-    public void changeState(String number, ActualState state) {
+    public boolean changeState(String number, ActualState state) {
         Ticket ticket = find(number);
+        if (ticket == null) {
+            return false;
+        }
         ticket.actualState = state;
+        return true;
     }
 
     public Ticket close(String number) {
