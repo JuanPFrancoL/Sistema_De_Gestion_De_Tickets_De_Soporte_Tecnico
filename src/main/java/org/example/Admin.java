@@ -17,6 +17,7 @@ public class Admin {
     private JButton btnShowTicketStatusHistory;
     private JButton btnClose;
     private JLabel lblPanelStatus;
+    private JButton btnStartAttention;
     private Queue queue;
     private Stack stack;
     private DoublyLinkedList doublyLinkedList;
@@ -47,6 +48,20 @@ public class Admin {
                 } else if (option == 1) {
                     JOptionPane.showMessageDialog(null, queue.printQueueLastToFirst());
                 }
+            }
+        });
+
+        btnStartAttention.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Node node = queue.dequeue();
+                if (node == null) {
+                    JOptionPane.showMessageDialog(null, "No hay tickets pendientes");
+                    return;
+                }
+                Ticket ticket = node.ticket;
+                ticket.actualState = ActualState.IN_PROCESS;
+
             }
         });
 
