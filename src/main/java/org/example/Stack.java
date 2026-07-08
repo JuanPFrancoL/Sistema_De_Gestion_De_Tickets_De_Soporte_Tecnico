@@ -33,4 +33,17 @@ public class Stack {
         return top == null;
     }
 
+    public String printStack() {
+        String text = "";
+        if (top == null) {
+            return "No hay estados para mostrar";
+        }
+        StackNode pointer = top;
+        while (pointer != null) {
+            text += pointer.state + "\n";
+            pointer = pointer.next;
+        }
+        return text;
+    }
+
 }

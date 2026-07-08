@@ -11,11 +11,12 @@ public class Main {
         fileManager.readFile();
         Queue queue = new Queue();
         DoublyLinkedList doublyLinkedList = new DoublyLinkedList();
+        Stack stack = new Stack();
         JFrame frame = new JFrame("Sistema de tickets");
         JPanel mainPanel = new JPanel(new CardLayout());
 
         Login loginPanel = new Login(fileManager.simpleList, mainPanel);
-        Admin adminPanel = new Admin(mainPanel, queue, doublyLinkedList);
+        Admin adminPanel = new Admin(mainPanel, queue, doublyLinkedList, stack);
         Client clientPanel = new Client(mainPanel, queue);
 
         mainPanel.add(loginPanel.getPanelLogin(), "login");

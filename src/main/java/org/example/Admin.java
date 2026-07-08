@@ -22,10 +22,11 @@ public class Admin {
     private DoublyLinkedList doublyLinkedList;
 
 
-    public Admin(JPanel mainPanel, Queue queue, DoublyLinkedList doublyLinkedList) {
+    public Admin(JPanel mainPanel, Queue queue, DoublyLinkedList doublyLinkedList, Stack stack) {
 
         this.queue = queue;
         this.doublyLinkedList = doublyLinkedList;
+        this.stack = stack;
 
 
         btnClose.addActionListener(new ActionListener() {
@@ -75,6 +76,18 @@ public class Admin {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+            }
+        });
+        btnShowTicketStatusHistory.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String number = JOptionPane.showInputDialog("Ingrese el numero del ticket:");
+                Ticket ticket = doublyLinkedList.find(number);
+                if (ticket == null) {
+                    JOptionPane.showMessageDialog(null, "Ticket no encontrado");
+                    return;
+                }
+                JOptionPane.showMessageDialog(null, ticket.);
             }
         });
     }
