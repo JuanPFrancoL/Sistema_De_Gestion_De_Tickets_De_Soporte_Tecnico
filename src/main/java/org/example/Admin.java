@@ -102,7 +102,7 @@ public class Admin {
                     JOptionPane.showMessageDialog(null, "Ticket no encontrado");
                     return;
                 }
-                JOptionPane.showMessageDialog(null, ticket.);
+                JOptionPane.showMessageDialog(null, ticket.history.printStack());
             }
         });
     }
