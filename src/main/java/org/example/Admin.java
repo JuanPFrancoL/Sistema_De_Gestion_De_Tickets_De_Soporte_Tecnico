@@ -53,7 +53,21 @@ public class Admin {
         btnChangePriority.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Priority[] priorities;
+                String number = JOptionPane.showInputDialog("Ingrese el numero del ticket:");
+                Ticket ticket = doublyLinkedList.find(number);
+                if (ticket == null) {
+                    JOptionPane.showMessageDialog(null, "Ticket no encontrado");
+                    return;
+                }
+                Priority priority = (Priority) JOptionPane.showInputDialog(
+                        null, "Seleccione la nueva prioridad",
+                        "Cambiar prioridad", JOptionPane.QUESTION_MESSAGE,
+                        null, Priority.values(), ticket.priority
+                );
+                if (priority != null) {
+                    ticket.priority = priority;
+                    JOptionPane.showMessageDialog(null, "Prioridad actualizada");
+                }
             }
         });
 
