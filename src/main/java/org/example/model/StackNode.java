@@ -1,8 +1,8 @@
-package org.example;
+package org.example.model;
 
 public class StackNode {
-    String state;
-    StackNode next;
+    public String state;
+    public StackNode next;
 
     public StackNode(String state) {
         this.state = state;

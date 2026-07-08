@@ -1,9 +1,9 @@
-package org.example;
+package org.example.model;
 
 public class Node {
-    Ticket ticket;
-    Node next;
-    Node previous;
+    public Ticket ticket;
+    public Node next;
+    public Node previous;
 
     public Node(Ticket ticket) {
         this.ticket = ticket;

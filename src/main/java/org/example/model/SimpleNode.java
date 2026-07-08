@@ -1,8 +1,8 @@
-package org.example;
+package org.example.model;
 
 public class SimpleNode {
-    User user;
-    SimpleNode next;
+    public User user;
+    public SimpleNode next;
 
     public SimpleNode(User user) {
         this.user = user;

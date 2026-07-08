@@ -1,4 +1,9 @@
-package org.example;
+package org.example.controller;
+
+import org.example.model.Role;
+import org.example.model.SimpleList;
+import org.example.model.SimpleNode;
+import org.example.model.User;
 
 import javax.swing.*;
 import java.awt.*;

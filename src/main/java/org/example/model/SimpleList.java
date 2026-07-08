@@ -1,7 +1,7 @@
-package org.example;
+package org.example.model;
 
 public class SimpleList {
-    SimpleNode head;
+    public SimpleNode head;
     int size;
 
 

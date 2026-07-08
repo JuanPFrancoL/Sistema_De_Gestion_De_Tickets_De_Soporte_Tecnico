@@ -1,4 +1,9 @@
-package org.example;
+package org.example.controller;
+
+import org.example.model.Node;
+import org.example.model.Priority;
+import org.example.model.Queue;
+import org.example.model.Ticket;
 
 import javax.swing.*;
 import java.awt.event.*;

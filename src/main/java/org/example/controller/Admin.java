@@ -1,4 +1,7 @@
-package org.example;
+package org.example.controller;
+
+import org.example.model.*;
+import org.example.model.Queue;
 
 import javax.swing.*;
 import java.awt.*;

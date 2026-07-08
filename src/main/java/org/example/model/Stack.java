@@ -1,4 +1,4 @@
-package org.example;
+package org.example.model;
 
 public class Stack {
     StackNode top;
@@ -40,7 +40,7 @@ public class Stack {
         if (top == null) {
             return "No hay estados para mostrar";
         }
-        
+
         String text = "";
         StackNode pointer = top;
 

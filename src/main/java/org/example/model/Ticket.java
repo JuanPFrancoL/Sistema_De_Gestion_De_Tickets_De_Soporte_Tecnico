@@ -1,12 +1,12 @@
-package org.example;
+package org.example.model;
 
 public class Ticket {
-    String number;
-    String name;
-    String description;
-    Priority priority;
-    ActualState actualState;
-    Stack history;
+    public String number;
+    public String name;
+    public String description;
+    public Priority priority;
+    public ActualState actualState;
+    public Stack history;
 
     public Ticket(String number, String name, String description, Priority priority) {
         this.number = number;
@@ -29,6 +29,5 @@ public class Ticket {
         this.actualState = newState;
         this.history.push(String.valueOf(newState));
     }
-
 
 }

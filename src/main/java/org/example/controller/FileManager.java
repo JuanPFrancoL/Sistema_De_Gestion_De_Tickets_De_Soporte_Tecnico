@@ -1,9 +1,14 @@
-package org.example;
+package org.example.controller;
+
+import org.example.model.Role;
+import org.example.model.SimpleList;
+import org.example.model.SimpleNode;
+import org.example.model.User;
 
 import java.io.*;
 
 public class FileManager {
-    SimpleList simpleList = new SimpleList();
+    public SimpleList simpleList = new SimpleList();
     File file = new File("src/main/resources/input/usuarios.txt");
 
     public void readFile() {

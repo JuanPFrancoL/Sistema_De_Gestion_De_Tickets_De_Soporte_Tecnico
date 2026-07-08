@@ -1,4 +1,8 @@
-package org.example;
+package org.example.controller;
+
+import org.example.model.DoublyLinkedList;
+import org.example.model.Queue;
+import org.example.model.Stack;
 
 import javax.swing.*;
 import java.awt.*;
